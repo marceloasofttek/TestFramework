@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+    tools { maven 'Maven3.6.3' }
+    options { skipDefaultCheckout() }
+    parameters {
+       /* choice(
+            name: 'ENVIRONMENT',
+            choices: ['integration', 'certification', 'production'],
+            description: 'Select environment.'
+        )*/
+        string(name: 'OPTIONS', defaultValue: '', description: 'Set cucumber options. Ej: --tags @TagDevopsTest1')
+    }
+    stages {
+        stage("Clean Dir") {
+                    steps {
+                        script {
+
+                            deleteDir()
+
+                            }
+                        }
+                    }
+        stage("Checkout") {
+                    steps {
+                        script {
+
+                            checkout scm
+
+                            }
+                        }
+                    }
+
+        stage("Test") {
+            steps {
+                script {
+                    
+                    bat "mvn verify test -Dcucumber.options=\"--tags ${options}\" --no-transfer-progress"
+                    
+                    }
+                }
+            }
+        }
+    post {
+        success {
+            script {
+                def reportPath  = "Documents/"
+                def reportUrl   = null
+
+
+            }
+        }
+    }
+}
