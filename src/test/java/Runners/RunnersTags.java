@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/features/"},
-        tags = "<tags example = @tagsName>",
+        tags = "@ENCONTRAR_TEMPERATURA",
         glue = "StepsDefinitions",
         snippets = SnippetType.CAMELCASE,
         plugin = {"pretty","json:target/cucumber/report.json"}

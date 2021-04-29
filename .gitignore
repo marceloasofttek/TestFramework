@@ -6,7 +6,8 @@
 # directory and files
 src/main/java/PAGE/
 src/test/resources/features/
-src/test/java/
+src/test/java/Runners/RunnersTags.java
+src/test/java/StepsDefinitions
 Documents/
 logs/
 ScreenShot/
