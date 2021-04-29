@@ -5,8 +5,11 @@
 
 # directory and files
 src/main/java/PAGE/
-src/test/resources/features/ValidarNodos.feature
-
+src/test/resources/features/
+src/test/java/
+Documents/
+logs/
+ScreenShot/
 
 # Compiled Java class files
 *.class
