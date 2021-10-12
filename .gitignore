@@ -4,7 +4,6 @@
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 # directory and files
-src/main/java/PAGE/
 src/test/resources/features/
 src/test/java/Runners/RunnersTags.java
 src/test/java/StepsDefinitions

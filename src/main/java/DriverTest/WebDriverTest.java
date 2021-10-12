@@ -35,22 +35,6 @@ public class WebDriverTest extends DataExcel{
         }
     }
 
-    /*public WebDriver driverRemote(Properties mavenProps){
-
-        try {
-            capability = new Capability();
-            driverWeb = new RemoteWebDriver(new URL(mavenProps.getProperty("remoteDriver")), capability.capabilityChrome(mavenProps));
-            driverWeb.manage().window().maximize();
-            driverWeb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driverWeb.get(mavenProps.getProperty("urlAplication"));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-        return driverWeb;
-
-    }*/
-
     public static void setDriverChrome(){
 
 
@@ -81,6 +65,24 @@ public class WebDriverTest extends DataExcel{
 
     public static void setDriverFirefox(){
 
+
+
+    }
+
+
+    public static void  driverRemote(){
+
+        try {
+            //capability = new Capability();
+            startMavenProps();
+            chromeOption = new ChromeOption();
+            driverWeb = new RemoteWebDriver(new URL(mavenProps.getProperty("remoteDriver")), chromeOption.chromeOptions(mavenProps));
+            driverWeb.manage().window().maximize();
+            driverWeb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driverWeb.get(retornarValor("URL", MetodosFeature.getScenario()));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
 
 
     }

@@ -1,7 +1,6 @@
 package Util;
 
 import DriverTest.WebDriverTest;
-import Keywords.KeywordsWeb;
 import cucumber.api.Scenario;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,12 +23,13 @@ public class CucumberTest extends WebDriverTest {
 
         MetodosVarios.createCarpeta(MetodosFeature.getScenario());
         String browser = retornarValor("BROWSER",MetodosFeature.getScenario());
-        int intBrowser = (browser.equals("CHROME"))?0:(browser.equals("IE"))?1:(browser.equals("FIREFOX"))?2:100;
+        int intBrowser = (browser.equals("CHROME"))?0:(browser.equals("IE"))?1:(browser.equals("FIREFOX"))?2:(browser.equals("CHROMEREMOTE"))?3:100;
         switch (intBrowser)
         {
             case 0: WebDriverTest.setDriverChrome();break;
             case 1: WebDriverTest.setDriverIE();break;
             case 2: WebDriverTest.setDriverFirefox();break;
+            case 3: WebDriverTest.driverRemote();break;
             default:assertTrue("NAVEGADOR NO IDENTIFICADO",false);logger.error("ERROR "+intBrowser+" -> NAVEGADOR NO IDENTIFICADO");
         }
 
