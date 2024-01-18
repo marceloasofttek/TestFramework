@@ -21,7 +21,7 @@ public class GenerateOTPCode {
     private static String PATH = System.getProperty("user.dir") + FILE_SEPARATOR + "qr" + FILE_SEPARATOR + "qrExample.png";
 
     public static void main (String[] args) throws UnsupportedEncodingException {
-        String credential = getCredential();
+        String credential = "CH:I34DV*-00 0C9SS0";//getCredential();
         int otp = getOTPCode(credential);
         System.out.println("Codigo OTP es: " + otp);
     }
