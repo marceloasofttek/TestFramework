@@ -1,5 +1,6 @@
 package context;
 
 public enum Context implements ScenariosKeys{
-    suiteName
+    suiteName,
+    PMICE
 }

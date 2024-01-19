@@ -42,6 +42,7 @@ public class DriverService {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--start-maximized");
+        options.addArguments("--incognito");
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
